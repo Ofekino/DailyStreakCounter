@@ -56,7 +56,7 @@ export default function App() {
       const generateStreakDays = (startDay, streakCount) => {
         return Array.from({ length: 7 }, (_, i) => ({
           day: addDays(startDay, i),
-          completed: i < (streakCount % 7 || 7),
+          completed: i < (streakCount % 7 === 0 && streakCount !== 0 ? 7 : streakCount % 7),
         }));
       };
 
